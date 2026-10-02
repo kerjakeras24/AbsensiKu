@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>AbsensiKu</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="container">
+
+        <!-- ==============================
+             JUDUL
+        =============================== -->
+
+        <h1>📋 AbsensiKu</h1>
+
+        <p>
+            Catat siswa yang tidak masuk sekolah.
+        </p>
+
+
+        <!-- ==============================
+             FORM ABSENSI
+        =============================== -->
+
+        <div class="form">
+
+            <label for="hari">
+                Hari
+            </label>
+
+            <input
+                type="text"
+                id="hari"
+                placeholder="Hari akan otomatis muncul"
+                readonly
+            >
+
+
+            <label for="tanggal">
+                Tanggal
+            </label>
+
+            <input
+                type="date"
+                id="tanggal"
+            >
+
+
+            <label for="nama">
+                Nama Siswa
+            </label>
+
+            <input
+                type="text"
+                id="nama"
+                placeholder="Masukkan nama siswa"
+            >
+
+
+            <label for="keterangan">
+                Keterangan
+            </label>
+
+            <select id="keterangan">
+
+                <option value="Alfa">
+                    Alfa
+                </option>
+
+                <option value="Izin">
+                    Izin
+                </option>
+
+                <option value="Sakit">
+                    Sakit
+                </option>
+
+            </select>
+
+
+            <button
+                id="tombolSimpan"
+                onclick="tambahAbsensi()"
+            >
+                ➕ Tambah Absensi
+            </button>
+
+
+            <button
+                id="tombolBatal"
+                onclick="batalEdit()"
+                style="display: none;"
+            >
+                ❌ Batal Edit
+            </button>
+
+        </div>
+
+
+        <!-- ==============================
+             DAFTAR ABSENSI
+        =============================== -->
+
+        <div class="daftar">
+
+            <h2>
+                📅 Siswa Tidak Masuk
+            </h2>
+
+            <div id="daftarAbsensi">
+
+                <p class="kosong">
+                    Memuat data...
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- ==============================
+         SUPABASE
+    =============================== -->
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>

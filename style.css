@@ -1,0 +1,440 @@
+/* =========================================
+   ABSENSIKU
+========================================= */
+
+
+/* =========================================
+   RESET
+========================================= */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+
+/* =========================================
+   BODY
+========================================= */
+
+body {
+    font-family: "Trebuchet MS", Arial, sans-serif;
+
+    min-height: 100vh;
+
+    padding: 40px 20px;
+
+    color: #1f2937;
+
+    background:
+        radial-gradient(
+            circle at 15% 20%,
+            rgba(255, 255, 255, 0.9),
+            transparent 25%
+        ),
+        radial-gradient(
+            circle at 85% 80%,
+            rgba(255, 255, 255, 0.7),
+            transparent 25%
+        ),
+        #dbe4ee;
+}
+
+
+/* =========================================
+   CONTAINER
+========================================= */
+
+.container {
+    width: 100%;
+
+    max-width: 800px;
+
+    margin: auto;
+
+    padding: 40px;
+
+    background: #ffffff;
+
+    border-radius: 16px;
+
+    box-shadow:
+        0 15px 35px rgba(0, 0, 0, 0.12),
+        0 3px 8px rgba(0, 0, 0, 0.05);
+}
+
+
+/* =========================================
+   JUDUL
+========================================= */
+
+h1 {
+    text-align: center;
+
+    font-size: 38px;
+
+    color: #1e3a8a;
+
+    margin-bottom: 8px;
+}
+
+
+.container > p {
+    text-align: center;
+
+    color: #64748b;
+
+    margin-bottom: 32px;
+}
+
+
+/* =========================================
+   FORM
+========================================= */
+
+.form {
+    padding: 25px;
+
+    background: #f8fafc;
+
+    border: 1px solid #e2e8f0;
+
+    border-radius: 12px;
+
+    margin-bottom: 30px;
+
+    box-shadow:
+        0 4px 10px rgba(0, 0, 0, 0.04);
+}
+
+
+/* =========================================
+   LABEL
+========================================= */
+
+label {
+    display: block;
+
+    margin-bottom: 7px;
+
+    font-size: 14px;
+
+    font-weight: bold;
+
+    color: #334155;
+}
+
+
+/* =========================================
+   INPUT
+========================================= */
+
+input,
+select {
+    width: 100%;
+
+    padding: 12px 14px;
+
+    margin-bottom: 18px;
+
+    font-family: inherit;
+
+    font-size: 15px;
+
+    color: #334155;
+
+    background: #ffffff;
+
+    border: 1px solid #cbd5e1;
+
+    border-radius: 8px;
+
+    outline: none;
+
+    transition: 0.2s;
+}
+
+
+input:focus,
+select:focus {
+    border-color: #2563eb;
+
+    box-shadow:
+        0 0 0 3px rgba(37, 99, 235, 0.12);
+}
+
+
+/* =========================================
+   HARI OTOMATIS
+========================================= */
+
+#hari {
+    background: #eef4ff;
+
+    color: #1d4ed8;
+
+    font-weight: bold;
+
+    cursor: not-allowed;
+}
+
+
+/* =========================================
+   TOMBOL
+========================================= */
+
+button {
+    width: 100%;
+
+    padding: 13px 16px;
+
+    border: none;
+
+    border-radius: 8px;
+
+    background: #2563eb;
+
+    color: white;
+
+    font-family: inherit;
+
+    font-size: 15px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition: 0.2s;
+}
+
+
+button:hover {
+    background: #1d4ed8;
+
+    transform: translateY(-1px);
+}
+
+
+button:active {
+    transform: translateY(0);
+}
+
+
+/* =========================================
+   TOMBOL BATAL
+========================================= */
+
+#tombolBatal {
+    margin-top: 8px;
+
+    background: #e5e7eb;
+
+    color: #374151;
+}
+
+
+#tombolBatal:hover {
+    background: #d1d5db;
+}
+
+
+/* =========================================
+   DAFTAR
+========================================= */
+
+.daftar h2 {
+    font-size: 22px;
+
+    color: #1e293b;
+
+    margin-bottom: 18px;
+}
+
+
+/* =========================================
+   DATA ABSENSI
+========================================= */
+
+.data-absensi {
+    position: relative;
+
+    padding: 20px;
+
+    margin-bottom: 15px;
+
+    background: #ffffff;
+
+    border: 1px solid #e2e8f0;
+
+    border-radius: 10px;
+
+    box-shadow:
+        0 3px 8px rgba(0, 0, 0, 0.06);
+}
+
+
+.data-absensi h3 {
+    font-size: 19px;
+
+    color: #1e293b;
+
+    margin-bottom: 8px;
+}
+
+
+.data-absensi .tanggal {
+    color: #64748b;
+
+    font-size: 14px;
+
+    margin-bottom: 12px;
+}
+
+
+/* =========================================
+   BADGE KETERANGAN
+========================================= */
+
+.badge {
+    display: inline-block;
+
+    padding: 5px 10px;
+
+    border-radius: 20px;
+
+    font-size: 13px;
+
+    font-weight: bold;
+
+    margin-bottom: 15px;
+}
+
+
+.badge-alfa {
+    background: #fee2e2;
+
+    color: #b91c1c;
+}
+
+
+.badge-izin {
+    background: #fef3c7;
+
+    color: #92400e;
+}
+
+
+.badge-sakit {
+    background: #dbeafe;
+
+    color: #1d4ed8;
+}
+
+
+/* =========================================
+   TOMBOL DATA
+========================================= */
+
+.tombol-data {
+    display: flex;
+
+    gap: 8px;
+}
+
+
+.tombol-data button {
+    width: auto;
+
+    padding: 9px 14px;
+
+    font-size: 13px;
+}
+
+
+.tombol-edit {
+    background: #fef3c7;
+
+    color: #92400e;
+}
+
+
+.tombol-edit:hover {
+    background: #fde68a;
+}
+
+
+.tombol-hapus {
+    background: #fee2e2;
+
+    color: #b91c1c;
+}
+
+
+.tombol-hapus:hover {
+    background: #fecaca;
+}
+
+
+/* =========================================
+   DATA KOSONG
+========================================= */
+
+.kosong {
+    text-align: center;
+
+    padding: 25px;
+
+    color: #94a3b8;
+
+    background: #f8fafc;
+
+    border: 1px dashed #cbd5e1;
+
+    border-radius: 10px;
+}
+
+
+/* =========================================
+   RESPONSIVE HP
+========================================= */
+
+@media (max-width: 600px) {
+
+    body {
+        padding: 20px 10px;
+    }
+
+
+    .container {
+        padding: 25px 20px;
+
+        border-radius: 12px;
+    }
+
+
+    h1 {
+        font-size: 30px;
+    }
+
+
+    .form {
+        padding: 20px;
+    }
+
+
+    .daftar h2 {
+        font-size: 19px;
+    }
+
+
+    .tombol-data {
+        flex-direction: column;
+    }
+
+
+    .tombol-data button {
+        width: 100%;
+    }
+
+}
