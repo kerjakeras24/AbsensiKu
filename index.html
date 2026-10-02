@@ -1,140 +1,256 @@
 <!DOCTYPE html>
 <html lang="id">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <title>AbsensiKu</title>
-
     <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
 
-    <div class="container">
+    <!-- LOGIN -->
+    <div id="halamanLogin" class="auth-page">
+        <div class="auth-card">
+            <h1>AbsensiKu</h1>
+            <p class="subtitle">Sistem Absensi Siswa</p>
 
-        <!-- ==============================
-             JUDUL
-        =============================== -->
+            <input type="text" id="usernameLogin" placeholder="Username">
+            <input type="password" id="passwordLogin" placeholder="Password">
 
-        <h1>📋 AbsensiKu</h1>
+            <button id="tombolLogin" class="btn-primary">Masuk</button>
 
-        <p>
-            Catat siswa yang tidak masuk sekolah.
-        </p>
+            <p id="pesanLogin" class="pesan"></p>
 
-
-        <!-- ==============================
-             FORM ABSENSI
-        =============================== -->
-
-        <div class="form">
-
-            <label for="hari">
-                Hari
-            </label>
-
-            <input
-                type="text"
-                id="hari"
-                placeholder="Hari akan otomatis muncul"
-                readonly
-            >
-
-
-            <label for="tanggal">
-                Tanggal
-            </label>
-
-            <input
-                type="date"
-                id="tanggal"
-            >
-
-
-            <label for="nama">
-                Nama Siswa
-            </label>
-
-            <input
-                type="text"
-                id="nama"
-                placeholder="Masukkan nama siswa"
-            >
-
-
-            <label for="keterangan">
-                Keterangan
-            </label>
-
-            <select id="keterangan">
-
-                <option value="Alfa">
-                    Alfa
-                </option>
-
-                <option value="Izin">
-                    Izin
-                </option>
-
-                <option value="Sakit">
-                    Sakit
-                </option>
-
-            </select>
-
-
-            <button
-                id="tombolSimpan"
-                onclick="tambahAbsensi()"
-            >
-                ➕ Tambah Absensi
-            </button>
-
-
-            <button
-                id="tombolBatal"
-                onclick="batalEdit()"
-                style="display: none;"
-            >
-                ❌ Batal Edit
-            </button>
-
+            <p class="auth-switch">
+                Belum punya akun?
+                <button id="tombolTampilDaftar" class="link-button">
+                    Daftar
+                </button>
+            </p>
         </div>
+    </div>
 
+    <!-- REGISTER -->
+    <div id="halamanDaftar" class="auth-page hidden">
+        <div class="auth-card">
+            <h1>Daftar Akun</h1>
+            <p class="subtitle">Buat akun AbsensiKu</p>
 
-        <!-- ==============================
-             DAFTAR ABSENSI
-        =============================== -->
+            <input type="text" id="usernameDaftar" placeholder="Username">
+            <input type="password" id="passwordDaftar" placeholder="Password">
 
-        <div class="daftar">
+            <button id="tombolDaftar" class="btn-primary">Daftar</button>
 
-            <h2>
-                📅 Siswa Tidak Masuk
-            </h2>
+            <p id="pesanDaftar" class="pesan"></p>
 
-            <div id="daftarAbsensi">
+            <p class="auth-switch">
+                Sudah punya akun?
+                <button id="tombolTampilLogin" class="link-button">
+                    Login
+                </button>
+            </p>
+        </div>
+    </div>
 
-                <p class="kosong">
-                    Memuat data...
-                </p>
+    <!-- APLIKASI -->
+    <main id="aplikasi" class="hidden">
+
+        <header class="header">
+            <div>
+                <h1>AbsensiKu</h1>
+                <p id="infoAkun">-</p>
+            </div>
+
+            <button id="tombolLogout" class="btn-danger">
+                Keluar
+            </button>
+        </header>
+
+        <!-- FORM ABSENSI -->
+        <section class="card">
+            <h2 id="judulForm">Tambah Absensi</h2>
+
+            <form id="formAbsensi">
+
+                <div class="form-grid">
+
+                    <div>
+                        <label>Tanggal</label>
+                        <input type="date" id="tanggal" required>
+                    </div>
+
+                    <div>
+                        <label>Hari</label>
+                        <input type="text" id="hari" readonly>
+                    </div>
+
+                    <div>
+                        <label>Nama Siswa</label>
+                        <input
+                            type="text"
+                            id="nama"
+                            placeholder="Masukkan nama siswa"
+                            required
+                        >
+                    </div>
+
+                    <div>
+                        <label>Keterangan</label>
+                        <select id="keterangan" required>
+                            <option value="">Pilih keterangan</option>
+                            <option value="Alfa">Alfa</option>
+                            <option value="Izin">Izin</option>
+                            <option value="Sakit">Sakit</option>
+                        </select>
+                    </div>
+
+                </div>
+
+                <div class="form-actions">
+                    <button type="submit" id="tombolSimpan" class="btn-primary">
+                        Simpan Absensi
+                    </button>
+
+                    <button
+                        type="button"
+                        id="tombolBatal"
+                        class="btn-secondary hidden"
+                    >
+                        Batal Edit
+                    </button>
+                </div>
+
+                <p id="pesanForm" class="pesan"></p>
+            </form>
+        </section>
+
+        <!-- FILTER -->
+        <section class="card">
+            <div class="section-title">
+                <div>
+                    <h2>Data Absensi</h2>
+                    <p>Hanya menampilkan siswa yang tidak hadir.</p>
+                </div>
+            </div>
+
+            <div class="filter-grid">
+
+                <div>
+                    <label>Cari Nama</label>
+                    <input
+                        type="text"
+                        id="filterNama"
+                        placeholder="Cari nama siswa..."
+                    >
+                </div>
+
+                <div>
+                    <label>Tanggal</label>
+                    <input type="date" id="filterTanggal">
+                </div>
+
+                <div>
+                    <label>Keterangan</label>
+                    <select id="filterKeterangan">
+                        <option value="">Semua</option>
+                        <option value="Alfa">Alfa</option>
+                        <option value="Izin">Izin</option>
+                        <option value="Sakit">Sakit</option>
+                    </select>
+                </div>
+
+                <div class="filter-buttons">
+                    <button id="tombolResetFilter" class="btn-secondary">
+                        Reset
+                    </button>
+
+                    <button id="tombolHariIni" class="btn-primary">
+                        Hari Ini
+                    </button>
+
+                    <button id="tombolCetakData" class="btn-secondary">
+                        Cetak Data
+                    </button>
+                </div>
 
             </div>
 
-        </div>
+            <div id="daftarAbsensi" class="table-container"></div>
+        </section>
 
-    </div>
+        <!-- REKAP -->
+        <section class="card">
 
+            <div class="section-title">
+                <div>
+                    <h2>📊 Rekap Per Siswa</h2>
+                    <p>
+                        Hitung Alfa, Izin, dan Sakit berdasarkan periode yang kamu pilih.
+                    </p>
+                </div>
+            </div>
 
-    <!-- ==============================
-         SUPABASE
-    =============================== -->
+            <div class="rekap-controls">
+
+                <div>
+                    <label>Periode Rekap</label>
+
+                    <select id="pilihanPeriode">
+                        <option value="minggu1">1 Minggu</option>
+                        <option value="minggu2">2 Minggu</option>
+                        <option value="minggu3">3 Minggu</option>
+                        <option value="bulan1">1 Bulan</option>
+                        <option value="bulan3">3 Bulan</option>
+                        <option value="bulan6">6 Bulan</option>
+                        <option value="tahun1">1 Tahun</option>
+                        <option value="custom">Custom</option>
+                    </select>
+                </div>
+
+                <div id="customTanggal" class="custom-tanggal hidden">
+
+                    <div>
+                        <label>Dari Tanggal</label>
+                        <input type="date" id="tanggalMulaiRekap">
+                    </div>
+
+                    <div>
+                        <label>Sampai Tanggal</label>
+                        <input type="date" id="tanggalAkhirRekap">
+                    </div>
+
+                </div>
+
+                <div class="rekap-buttons">
+
+                    <button
+                        id="tombolBuatRekap"
+                        class="btn-primary"
+                    >
+                        Buat Rekap
+                    </button>
+
+                    <button
+                        id="tombolCetakRekap"
+                        class="btn-secondary"
+                    >
+                        Cetak Rekap
+                    </button>
+
+                </div>
+
+            </div>
+
+            <div id="infoPeriodeRekap" class="periode-info"></div>
+
+            <div id="hasilRekap" class="table-container"></div>
+
+        </section>
+
+    </main>
 
     <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
-
     <script src="script.js"></script>
 
 </body>
-
 </html>

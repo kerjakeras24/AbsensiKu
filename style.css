@@ -1,11 +1,47 @@
-/* =========================================
-   ABSENSIKU
-========================================= */
+/* ======================================================
+   ABSENSIKU - MODERN BLUE UI
+   ====================================================== */
 
+:root {
+    --blue-950: #0f172a;
+    --blue-900: #172554;
+    --blue-800: #1e3a8a;
+    --blue-700: #1d4ed8;
+    --blue-600: #2563eb;
+    --blue-500: #3b82f6;
+    --blue-100: #dbeafe;
+    --blue-50: #eff6ff;
 
-/* =========================================
+    --white: #ffffff;
+    --slate-900: #0f172a;
+    --slate-700: #334155;
+    --slate-600: #475569;
+    --slate-500: #64748b;
+    --slate-400: #94a3b8;
+    --slate-300: #cbd5e1;
+    --slate-200: #e2e8f0;
+    --slate-100: #f1f5f9;
+    --slate-50: #f8fafc;
+
+    --green: #16a34a;
+    --green-bg: #dcfce7;
+
+    --yellow: #d97706;
+    --yellow-bg: #fef3c7;
+
+    --red: #dc2626;
+    --red-bg: #fee2e2;
+
+    --shadow-sm: 0 2px 8px rgba(15, 23, 42, 0.06);
+    --shadow-md: 0 8px 25px rgba(15, 23, 42, 0.08);
+    --shadow-lg: 0 15px 40px rgba(15, 23, 42, 0.12);
+
+    --radius: 16px;
+}
+
+/* ======================================================
    RESET
-========================================= */
+   ====================================================== */
 
 * {
     box-sizing: border-box;
@@ -13,428 +49,718 @@
     padding: 0;
 }
 
-
-/* =========================================
-   BODY
-========================================= */
+html {
+    scroll-behavior: smooth;
+}
 
 body {
-    font-family: "Trebuchet MS", Arial, sans-serif;
-
-    min-height: 100vh;
-
-    padding: 40px 20px;
-
-    color: #1f2937;
+    font-family:
+        Inter,
+        "Segoe UI",
+        Roboto,
+        Arial,
+        Helvetica,
+        sans-serif;
 
     background:
-        radial-gradient(
-            circle at 15% 20%,
-            rgba(255, 255, 255, 0.9),
-            transparent 25%
-        ),
-        radial-gradient(
-            circle at 85% 80%,
-            rgba(255, 255, 255, 0.7),
-            transparent 25%
-        ),
-        #dbe4ee;
+        linear-gradient(
+            135deg,
+            #f8fbff 0%,
+            #eef5ff 50%,
+            #f8fafc 100%
+        );
+
+    color: var(--slate-900);
+    line-height: 1.5;
+    min-height: 100vh;
 }
 
+.hidden {
+    display: none !important;
+}
 
-/* =========================================
-   CONTAINER
-========================================= */
+/* ======================================================
+   INPUT & BUTTON
+   ====================================================== */
 
-.container {
+input,
+select,
+button {
+    font-family: inherit;
+    font-size: 14px;
+}
+
+input,
+select {
     width: 100%;
+    padding: 12px 14px;
 
-    max-width: 800px;
+    border: 1px solid var(--slate-300);
+    border-radius: 10px;
 
-    margin: auto;
+    background: var(--white);
+    color: var(--slate-900);
 
-    padding: 40px;
+    outline: none;
 
-    background: #ffffff;
+    transition:
+        border-color 0.2s ease,
+        box-shadow 0.2s ease,
+        transform 0.2s ease;
+}
 
-    border-radius: 16px;
+input::placeholder {
+    color: var(--slate-400);
+}
+
+input:focus,
+select:focus {
+    border-color: var(--blue-500);
 
     box-shadow:
-        0 15px 35px rgba(0, 0, 0, 0.12),
-        0 3px 8px rgba(0, 0, 0, 0.05);
+        0 0 0 3px rgba(59, 130, 246, 0.13);
 }
-
-
-/* =========================================
-   JUDUL
-========================================= */
-
-h1 {
-    text-align: center;
-
-    font-size: 38px;
-
-    color: #1e3a8a;
-
-    margin-bottom: 8px;
-}
-
-
-.container > p {
-    text-align: center;
-
-    color: #64748b;
-
-    margin-bottom: 32px;
-}
-
-
-/* =========================================
-   FORM
-========================================= */
-
-.form {
-    padding: 25px;
-
-    background: #f8fafc;
-
-    border: 1px solid #e2e8f0;
-
-    border-radius: 12px;
-
-    margin-bottom: 30px;
-
-    box-shadow:
-        0 4px 10px rgba(0, 0, 0, 0.04);
-}
-
-
-/* =========================================
-   LABEL
-========================================= */
 
 label {
     display: block;
 
     margin-bottom: 7px;
 
-    font-size: 14px;
+    font-size: 13px;
+    font-weight: 700;
 
-    font-weight: bold;
-
-    color: #334155;
+    color: var(--slate-700);
 }
-
-
-/* =========================================
-   INPUT
-========================================= */
-
-input,
-select {
-    width: 100%;
-
-    padding: 12px 14px;
-
-    margin-bottom: 18px;
-
-    font-family: inherit;
-
-    font-size: 15px;
-
-    color: #334155;
-
-    background: #ffffff;
-
-    border: 1px solid #cbd5e1;
-
-    border-radius: 8px;
-
-    outline: none;
-
-    transition: 0.2s;
-}
-
-
-input:focus,
-select:focus {
-    border-color: #2563eb;
-
-    box-shadow:
-        0 0 0 3px rgba(37, 99, 235, 0.12);
-}
-
-
-/* =========================================
-   HARI OTOMATIS
-========================================= */
-
-#hari {
-    background: #eef4ff;
-
-    color: #1d4ed8;
-
-    font-weight: bold;
-
-    cursor: not-allowed;
-}
-
-
-/* =========================================
-   TOMBOL
-========================================= */
 
 button {
-    width: 100%;
-
-    padding: 13px 16px;
-
     border: none;
+    border-radius: 10px;
 
-    border-radius: 8px;
-
-    background: #2563eb;
-
-    color: white;
-
-    font-family: inherit;
-
-    font-size: 15px;
-
-    font-weight: bold;
+    padding: 11px 17px;
 
     cursor: pointer;
 
-    transition: 0.2s;
-}
+    font-weight: 700;
 
+    transition:
+        transform 0.18s ease,
+        box-shadow 0.18s ease,
+        background 0.18s ease;
+}
 
 button:hover {
-    background: #1d4ed8;
-
     transform: translateY(-1px);
 }
-
 
 button:active {
     transform: translateY(0);
 }
 
-
-/* =========================================
-   TOMBOL BATAL
-========================================= */
-
-#tombolBatal {
-    margin-top: 8px;
-
-    background: #e5e7eb;
-
-    color: #374151;
+button:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    transform: none;
 }
 
+/* ======================================================
+   BUTTON COLORS
+   ====================================================== */
 
-#tombolBatal:hover {
-    background: #d1d5db;
-}
+.btn-primary {
+    background:
+        linear-gradient(
+            135deg,
+            var(--blue-600),
+            var(--blue-700)
+        );
 
-
-/* =========================================
-   DAFTAR
-========================================= */
-
-.daftar h2 {
-    font-size: 22px;
-
-    color: #1e293b;
-
-    margin-bottom: 18px;
-}
-
-
-/* =========================================
-   DATA ABSENSI
-========================================= */
-
-.data-absensi {
-    position: relative;
-
-    padding: 20px;
-
-    margin-bottom: 15px;
-
-    background: #ffffff;
-
-    border: 1px solid #e2e8f0;
-
-    border-radius: 10px;
+    color: white;
 
     box-shadow:
-        0 3px 8px rgba(0, 0, 0, 0.06);
+        0 5px 14px rgba(37, 99, 235, 0.22);
 }
 
+.btn-primary:hover {
+    background:
+        linear-gradient(
+            135deg,
+            var(--blue-500),
+            var(--blue-600)
+        );
 
-.data-absensi h3 {
-    font-size: 19px;
-
-    color: #1e293b;
-
-    margin-bottom: 8px;
+    box-shadow:
+        0 7px 18px rgba(37, 99, 235, 0.3);
 }
 
+.btn-secondary {
+    background: var(--slate-100);
+    color: var(--slate-700);
+}
 
-.data-absensi .tanggal {
-    color: #64748b;
+.btn-secondary:hover {
+    background: var(--slate-200);
+}
+
+.btn-danger {
+    background: var(--red);
+    color: white;
+
+    box-shadow:
+        0 4px 12px rgba(220, 38, 38, 0.18);
+}
+
+.btn-danger:hover {
+    background: #b91c1c;
+}
+
+.btn-small {
+    padding: 7px 10px;
+    font-size: 12px;
+}
+
+/* ======================================================
+   AUTH
+   ====================================================== */
+
+.auth-page {
+    min-height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 25px;
+
+    background:
+        radial-gradient(
+            circle at top left,
+            rgba(59, 130, 246, 0.35),
+            transparent 35%
+        ),
+        linear-gradient(
+            135deg,
+            #0f172a,
+            #172554 50%,
+            #1d4ed8
+        );
+}
+
+.auth-card {
+    width: 100%;
+    max-width: 420px;
+
+    padding: 38px;
+
+    background: rgba(255, 255, 255, 0.98);
+
+    border: 1px solid rgba(255, 255, 255, 0.5);
+
+    border-radius: 22px;
+
+    box-shadow: var(--shadow-lg);
+
+    animation: muncul 0.4s ease;
+}
+
+.auth-card h1 {
+    text-align: center;
+
+    font-size: 32px;
+    font-weight: 800;
+
+    color: var(--blue-700);
+
+    margin-bottom: 4px;
+}
+
+.subtitle {
+    text-align: center;
+
+    color: var(--slate-500);
+
+    margin-bottom: 28px;
+}
+
+.auth-card input {
+    margin-bottom: 14px;
+}
+
+.auth-card .btn-primary {
+    width: 100%;
+
+    margin-top: 5px;
+}
+
+.auth-switch {
+    text-align: center;
+
+    margin-top: 22px;
+
+    color: var(--slate-500);
 
     font-size: 14px;
-
-    margin-bottom: 12px;
 }
 
+.link-button {
+    background: none;
 
-/* =========================================
-   BADGE KETERANGAN
-========================================= */
+    padding: 0;
 
-.badge {
-    display: inline-block;
+    color: var(--blue-600);
 
-    padding: 5px 10px;
+    font-weight: 700;
+}
 
-    border-radius: 20px;
+.link-button:hover {
+    color: var(--blue-800);
+
+    transform: none;
+}
+
+.pesan {
+    margin-top: 12px;
+
+    text-align: center;
+
+    color: var(--slate-600);
+
+    font-size: 13px;
+}
+
+/* ======================================================
+   HEADER
+   ====================================================== */
+
+.header {
+    position: sticky;
+    top: 0;
+    z-index: 50;
+
+    min-height: 76px;
+
+    padding: 15px max(20px, calc((100% - 1260px) / 2));
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    gap: 20px;
+
+    color: white;
+
+    background:
+        linear-gradient(
+            120deg,
+            var(--blue-950),
+            var(--blue-800),
+            var(--blue-600)
+        );
+
+    box-shadow:
+        0 5px 20px rgba(15, 23, 42, 0.18);
+}
+
+.header h1 {
+    font-size: 25px;
+    font-weight: 800;
+
+    letter-spacing: -0.5px;
+}
+
+.header p {
+    margin-top: 2px;
+
+    color: rgba(255, 255, 255, 0.75);
+
+    font-size: 12px;
+}
+
+/* ======================================================
+   MAIN
+   ====================================================== */
+
+main {
+    width: 100%;
+    max-width: 1320px;
+
+    margin: 0 auto;
+
+    padding:
+        12px 0 60px;
+}
+
+/* ======================================================
+   CARD
+   ====================================================== */
+
+.card {
+    margin: 20px;
+
+    padding: 25px;
+
+    background: rgba(255, 255, 255, 0.94);
+
+    border: 1px solid rgba(226, 232, 240, 0.85);
+
+    border-radius: var(--radius);
+
+    box-shadow: var(--shadow-md);
+
+    backdrop-filter: blur(8px);
+}
+
+.card h2 {
+    color: var(--slate-900);
+
+    font-size: 19px;
+    font-weight: 800;
+
+    margin-bottom: 5px;
+}
+
+.section-title {
+    margin-bottom: 20px;
+}
+
+.section-title p {
+    color: var(--slate-500);
+
+    font-size: 13px;
+}
+
+/* ======================================================
+   FORM
+   ====================================================== */
+
+.form-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, minmax(0, 1fr));
+
+    gap: 17px;
+}
+
+.form-actions {
+    display: flex;
+
+    gap: 10px;
+
+    margin-top: 20px;
+}
+
+/* ======================================================
+   FILTER
+   ====================================================== */
+
+.filter-grid {
+    display: grid;
+
+    grid-template-columns:
+        1.4fr
+        1fr
+        1fr
+        auto;
+
+    gap: 13px;
+
+    align-items: end;
+}
+
+.filter-buttons {
+    display: flex;
+
+    gap: 7px;
+
+    flex-wrap: wrap;
+}
+
+/* ======================================================
+   TABLE
+   ====================================================== */
+
+.table-container {
+    width: 100%;
+
+    overflow-x: auto;
+
+    margin-top: 20px;
+
+    border:
+        1px solid var(--slate-200);
+
+    border-radius: 12px;
+}
+
+table {
+    width: 100%;
+
+    border-collapse: collapse;
+
+    min-width: 680px;
+
+    background: white;
+}
+
+th,
+td {
+    padding: 13px 14px;
+
+    border-bottom:
+        1px solid var(--slate-200);
+
+    text-align: left;
+
+    vertical-align: middle;
+}
+
+th {
+    background:
+        linear-gradient(
+            180deg,
+            #f8fbff,
+            #eff6ff
+        );
+
+    color: var(--blue-900);
 
     font-size: 13px;
 
-    font-weight: bold;
+    font-weight: 800;
 
-    margin-bottom: 15px;
+    white-space: nowrap;
 }
 
+td {
+    color: var(--slate-700);
+
+    font-size: 14px;
+}
+
+tbody tr:last-child td {
+    border-bottom: none;
+}
+
+tbody tr:hover td {
+    background: #f8fbff;
+}
+
+.aksi {
+    display: flex;
+
+    gap: 6px;
+}
+
+/* ======================================================
+   BADGE
+   ====================================================== */
+
+.badge {
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    min-width: 58px;
+
+    padding: 5px 10px;
+
+    border-radius: 999px;
+
+    font-size: 11px;
+
+    font-weight: 800;
+}
 
 .badge-alfa {
-    background: #fee2e2;
-
-    color: #b91c1c;
+    background: var(--red-bg);
+    color: var(--red);
 }
-
 
 .badge-izin {
-    background: #fef3c7;
-
-    color: #92400e;
+    background: var(--yellow-bg);
+    color: var(--yellow);
 }
-
 
 .badge-sakit {
-    background: #dbeafe;
-
-    color: #1d4ed8;
+    background: var(--blue-100);
+    color: var(--blue-700);
 }
 
+.empty {
+    padding: 38px 20px;
 
-/* =========================================
-   TOMBOL DATA
-========================================= */
+    text-align: center;
 
-.tombol-data {
+    color: var(--slate-500);
+
+    font-size: 14px;
+}
+
+/* ======================================================
+   REKAP
+   ====================================================== */
+
+.rekap-controls {
+    display: flex;
+
+    align-items: end;
+
+    gap: 13px;
+
+    flex-wrap: wrap;
+}
+
+.rekap-controls > div:first-child {
+    min-width: 220px;
+}
+
+.custom-tanggal {
+    display: flex;
+
+    gap: 12px;
+}
+
+.custom-tanggal > div {
+    min-width: 180px;
+}
+
+.rekap-buttons {
     display: flex;
 
     gap: 8px;
 }
 
+.periode-info {
+    margin-top: 18px;
 
-.tombol-data button {
-    width: auto;
+    padding: 12px 15px;
 
-    padding: 9px 14px;
+    border:
+        1px solid #bfdbfe;
+
+    border-radius: 10px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #eff6ff,
+            #f8fbff
+        );
+
+    color: var(--blue-800);
 
     font-size: 13px;
 }
 
+.rekap-total {
+    color: var(--blue-700);
 
-.tombol-edit {
-    background: #fef3c7;
-
-    color: #92400e;
+    font-weight: 800;
 }
 
-
-.tombol-edit:hover {
-    background: #fde68a;
-}
-
-
-.tombol-hapus {
-    background: #fee2e2;
-
-    color: #b91c1c;
-}
-
-
-.tombol-hapus:hover {
-    background: #fecaca;
-}
-
-
-/* =========================================
-   DATA KOSONG
-========================================= */
-
-.kosong {
+.text-center {
     text-align: center;
-
-    padding: 25px;
-
-    color: #94a3b8;
-
-    background: #f8fafc;
-
-    border: 1px dashed #cbd5e1;
-
-    border-radius: 10px;
 }
 
+/* ======================================================
+   ANIMATION
+   ====================================================== */
 
-/* =========================================
-   RESPONSIVE HP
-========================================= */
+@keyframes muncul {
 
-@media (max-width: 600px) {
+    from {
+        opacity: 0;
 
-    body {
-        padding: 20px 10px;
+        transform:
+            translateY(12px)
+            scale(0.98);
     }
 
+    to {
+        opacity: 1;
 
-    .container {
-        padding: 25px 20px;
+        transform:
+            translateY(0)
+            scale(1);
+    }
+}
 
-        border-radius: 12px;
+/* ======================================================
+   RESPONSIVE
+   ====================================================== */
+
+@media (max-width: 1000px) {
+
+    .filter-grid {
+        grid-template-columns:
+            repeat(2, 1fr);
     }
 
+}
 
-    h1 {
-        font-size: 30px;
+@media (max-width: 700px) {
+
+    .header {
+        padding: 13px 15px;
     }
 
-
-    .form {
-        padding: 20px;
+    .header h1 {
+        font-size: 21px;
     }
 
+    .card {
+        margin: 14px 10px;
 
-    .daftar h2 {
-        font-size: 19px;
+        padding: 18px;
     }
 
+    .form-grid,
+    .filter-grid {
+        grid-template-columns: 1fr;
+    }
 
-    .tombol-data {
+    .form-actions {
         flex-direction: column;
     }
 
-
-    .tombol-data button {
+    .form-actions button {
         width: 100%;
+    }
+
+    .custom-tanggal {
+        width: 100%;
+
+        flex-direction: column;
+    }
+
+    .custom-tanggal > div {
+        width: 100%;
+    }
+
+    .rekap-buttons {
+        width: 100%;
+    }
+
+    .rekap-buttons button {
+        flex: 1;
+    }
+
+}
+
+@media (max-width: 450px) {
+
+    .auth-card {
+        padding: 27px 20px;
+    }
+
+    .auth-card h1 {
+        font-size: 27px;
+    }
+
+    .header .btn-danger {
+        padding: 9px 12px;
+        font-size: 12px;
     }
 
 }
